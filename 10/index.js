@@ -1,15 +1,24 @@
-const numeros = [1, 8, 11, 4];
+const numeros = [1, 11, 4, 8];
 
-let maior = 0;
-let menor = Infinity;
+// let maior = numeros[0];
+// let menor = numeros[0];
 
-for (let item of numeros) {
-    for (let item2 of numeros)
-        if (item > maior) {
-            maior = item;
-        } else if (item2 < menor) {
-            menor = item2;
+// for (let numero of numeros) {
+//     if (numero < menor) {
+//         menor = numero;
+//     } else if (numero > maior) {
+//         maior = numero;
+//     };
+// } console.log(maior - menor)
+
+let maiorDif = -Number.MAX_VALUE;
+for (let x of numeros) {
+    for (let y of numeros) {
+        const difAtual = x - y;
+        if (difAtual > maiorDif) {
+            maiorDif = difAtual;
         }
+    }
 }
-let diferenca = maior - menor;
-console.log(diferenca);
+
+console.log(maiorDif)
